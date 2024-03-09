@@ -1,10 +1,28 @@
 <script setup>
+console.log(window.screen.width, window.screen.height)
+function goMain() {
+  const startY = scrollY;
+  const endY = scrollY + window.screen.height-window.screen.height*20/100;
+  const duration = 1000
+  const startTime = performance.now();
 
+  function scrollAnimation(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    const targetY = startY + (endY - startY) * progress;
+
+    window.scrollTo(0, targetY);
+
+    if (progress < 1) requestAnimationFrame(scrollAnimation);
+  }
+
+  requestAnimationFrame(scrollAnimation);
+}
 </script>
 
 <template>
 
-    <div id="mouse-scroll">
+    <div @click="goMain()" id="mouse-scroll">
       <div class="mouse">
         <div class="mouse-in"></div>
       </div>
@@ -12,7 +30,6 @@
         <span class="down-arrow-1"></span>
         <span class="down-arrow-2"></span>
         <span class="down-arrow-3"></span>
-
       </div>
     </div>
 
@@ -24,7 +41,11 @@ body {
   background: #464646;
 }
 #mouse-scroll {
-  style: block;
+  display: block;
+}
+
+#mouse-scroll:hover {
+  cursor: pointer;
 }
 
 #mouse-scroll span{
@@ -32,7 +53,6 @@ body {
   width: 10px;
   height: 10px;
   -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
@@ -54,7 +74,7 @@ body {
   -webkit-animation: mouse-scroll 1s infinite;
   -moz-animation: mouse-scroll 1s infinite;
 }
-#mouse-croll .down-arrow-1 {
+#mouse-scroll .down-arrow-1 {
   -webkit-animation-delay: .1s;
   -moz-animation-delay: .1s;
   -webkit-animation-direction: alternate;

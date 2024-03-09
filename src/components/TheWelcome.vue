@@ -1,13 +1,11 @@
 <script setup>
 import WelcomeItem from './WelcomeItem.vue'
-
 </script>
 
 <template>
-
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/js-svgrepo-com.svg" alt="">
+      <img src="../assets/icons/technologies/js-svgrepo-com.svg" alt="" />
     </template>
     <template #heading>JavaScript</template>
 
@@ -17,7 +15,7 @@ import WelcomeItem from './WelcomeItem.vue'
   </WelcomeItem>
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/node-svgrepo-com.svg" alt="">
+      <img src="../assets/icons/technologies/node-svgrepo-com.svg" alt="" />
     </template>
     <template #heading>Node.js</template>
 
@@ -27,17 +25,18 @@ import WelcomeItem from './WelcomeItem.vue'
   </WelcomeItem>
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/vue-vuejs-javascript-js-framework-svgrepo-com.svg" alt="">
+      <img
+        src="../assets/icons/technologies/vue-vuejs-javascript-js-framework-svgrepo-com.svg"
+        alt=""
+      />
     </template>
-    <template #heading>Vue.js
-    </template>
+    <template #heading>Vue.js </template>
 
     This project is served and bundled with
     <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
     recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-
-    you need to test your components and web pages, check out
+    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> + you need to
+    test your components and web pages, check out
     <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
     <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
       >Cypress Component Testing</a
@@ -50,7 +49,10 @@ import WelcomeItem from './WelcomeItem.vue'
 
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/react-javascript-js-framework-facebook-svgrepo-com.svg" alt="">
+      <img
+        src="../assets/icons/technologies/react-javascript-js-framework-facebook-svgrepo-com.svg"
+        alt=""
+      />
     </template>
     <template #heading>React.js</template>
 
@@ -66,7 +68,7 @@ import WelcomeItem from './WelcomeItem.vue'
 
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/firestore-svgrepo-com.svg" alt="">
+      <img src="../assets/icons/technologies/firestore-svgrepo-com.svg" alt="" />
     </template>
     <template #heading>Firebase</template>
 
@@ -84,7 +86,7 @@ import WelcomeItem from './WelcomeItem.vue'
 
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/mongo-svgrepo-com.svg" alt="">
+      <img src="../assets/icons/technologies/mongo-svgrepo-com.svg" alt="" />
     </template>
     <template #heading>Node.js</template>
 
@@ -94,7 +96,7 @@ import WelcomeItem from './WelcomeItem.vue'
   </WelcomeItem>
   <WelcomeItem>
     <template #icon>
-      <img src="./icons/tailwind-svgrepo-com.svg" alt="">
+      <img src="../assets/icons/technologies/tailwind-svgrepo-com.svg" alt="" />
     </template>
     <template #heading>Tailwind CSS</template>
 
