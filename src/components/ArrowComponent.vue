@@ -1,39 +1,35 @@
 <script setup>
-console.log(window.screen.width, window.screen.height)
 function goMain() {
-  const startY = scrollY;
-  const endY = scrollY + window.screen.height-window.screen.height*20/100;
+  const startY = scrollY
+  const endY = scrollY + window.screen.height - (window.screen.height * 20) / 100
   const duration = 1000
-  const startTime = performance.now();
+  const startTime = performance.now()
 
   function scrollAnimation(currentTime) {
-    const elapsedTime = currentTime - startTime;
-    const progress = Math.min(elapsedTime / duration, 1);
-    const targetY = startY + (endY - startY) * progress;
+    const elapsedTime = currentTime - startTime
+    const progress = Math.min(elapsedTime / duration, 1)
+    const targetY = startY + (endY - startY) * progress
 
-    window.scrollTo(0, targetY);
+    window.scrollTo(0, targetY)
 
-    if (progress < 1) requestAnimationFrame(scrollAnimation);
+    if (progress < 1) requestAnimationFrame(scrollAnimation)
   }
 
-  requestAnimationFrame(scrollAnimation);
+  requestAnimationFrame(scrollAnimation)
 }
 </script>
 
 <template>
-
-    <div @click="goMain()" id="mouse-scroll">
-      <div class="mouse">
-        <div class="mouse-in"></div>
-      </div>
-      <div>
-        <span class="down-arrow-1"></span>
-        <span class="down-arrow-2"></span>
-        <span class="down-arrow-3"></span>
-      </div>
+  <div @click="goMain()" id="mouse-scroll">
+    <div class="mouse">
+      <div class="mouse-in"></div>
     </div>
-
-
+    <div>
+      <span class="down-arrow-1"></span>
+      <span class="down-arrow-2"></span>
+      <span class="down-arrow-3"></span>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -48,7 +44,7 @@ body {
   cursor: pointer;
 }
 
-#mouse-scroll span{
+#mouse-scroll span {
   display: block;
   width: 10px;
   height: 10px;
@@ -70,28 +66,31 @@ body {
 #mouse-scroll .down-arrow-1 {
   margin-top: 6px;
 }
-#mouse-scroll .down-arrow-1, #mouse-scroll .down-arrow-2, #mouse-scroll .down-arrow-3, #mouse-scroll .down-arrow-4 {
+#mouse-scroll .down-arrow-1,
+#mouse-scroll .down-arrow-2,
+#mouse-scroll .down-arrow-3,
+#mouse-scroll .down-arrow-4 {
   -webkit-animation: mouse-scroll 1s infinite;
   -moz-animation: mouse-scroll 1s infinite;
 }
 #mouse-scroll .down-arrow-1 {
-  -webkit-animation-delay: .1s;
-  -moz-animation-delay: .1s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
   -webkit-animation-direction: alternate;
 }
 #mouse-scroll .down-arrow-2 {
-  -webkit-animation-delay: .2s;
-  -moz-animation-delay: .2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
   -webkit-animation-direction: alternate;
 }
 #mouse-scroll .down-arrow-3 {
-  -webkit-animation-delay: .3s;
-  -moz-animation-dekay: .3s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-dekay: 0.3s;
   -webkit-animation-direction: alternate;
 }
 #mouse-scroll .down-arrow-4 {
-  -webkit-animation-delay: .4s;
-  -moz-animation-dekay: .4s;
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-dekay: 0.4s;
   -webkit-animation-direction: alternate;
 }
 #mouse-scroll .mouse-in {
@@ -126,7 +125,7 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -143,5 +142,4 @@ body {
     opacity: 1;
   }
 }
-
 </style>
