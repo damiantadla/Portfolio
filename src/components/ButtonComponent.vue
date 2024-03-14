@@ -6,21 +6,30 @@ const props = defineProps({
     type: String,
     required: true
   },
-  bg: String
+  bg: String,
+  size: String
 })
 
 const isWhite = ref(false)
+const isXL = ref(false)
 
+if (props.size) isXL.value = true
 if (props.bg) isWhite.value = true
 </script>
 
 <template>
-  <button class="button bg-yellowColor" :class="{ white: isWhite }" role="button">
+  <button class="button bg-yellowColor" :class="{ white: isWhite, xl: isXL }" role="button">
     {{ text }}
   </button>
 </template>
 
 <style scoped>
+.xl {
+  width: 300px !important;
+  height: 60px !important;
+  font-size: 2rem !important;
+  font-weight: normal !important;
+}
 .white {
   color: black;
   background-color: white;
