@@ -1,18 +1,16 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue'
-import TitleComponent from '@/components/TitleComponent.vue'
-import ButtonComponent from '@/components/ButtonComponent.vue'
-import CarouselComponent from '@/components/CarouselComponent.vue'
-import PortfolioItemComponent from '@/components/PortfolioItemComponent.vue'
-import ContactFormComponent from '@/components/ContactFormComponent.vue'
-
-console.log(window.outerWidth)
+import TitleComponent from '../components/TitleComponent.vue'
+import ButtonComponent from '../components/ButtonComponent.vue'
+import CarouselComponent from '../components/CarouselComponent.vue'
+import PortfolioItemComponent from '../components/PortfolioItemComponent.vue'
+import ContactFormComponent from '../components/ContactFormComponent.vue'
 
 const portfolioLength = ref(0)
 const projectsLength = ref(0)
 
 onBeforeMount(() => {
-  if (window.outerWidth > 768) {
+  if (window.innerWidth > 768) {
     portfolioLength.value = 4
     projectsLength.value = 4
   } else {
@@ -22,7 +20,7 @@ onBeforeMount(() => {
 })
 
 window.addEventListener('resize', () => {
-  if (window.outerWidth > 768) {
+  if (window.innerWidth > 768) {
     portfolioLength.value = 4
     projectsLength.value = 4
   } else {
@@ -30,16 +28,6 @@ window.addEventListener('resize', () => {
     projectsLength.value = 2
   }
 })
-
-// let portfolioLength = 0
-// let projectsLength = 0
-//
-// if (window.outerWidth > 768) {
-//   portfolioLength = 4
-//   projectsLength = 4
-// } else {
-//   portfolioLength = 3
-//   projectsLength = 2
 </script>
 
 <template>
@@ -119,22 +107,24 @@ window.addEventListener('resize', () => {
             formularz.
           </p>
         </div>
-        <div class="md:w-[200px] flex md:flex-wrap mt-20 md:ml-40">
-          <div class="flex">
-            <img
-              class="w-[40px] md:w-[30px] mx-8 md:mx-0 md:mr-2"
-              src="../assets/icons/socialmedia/gmail.svg"
-              alt=""
-            />
-            <p class="hidden md:block text-gray-500 md:text-2xl">Gmail</p>
-          </div>
-          <div class="flex md:mt-10">
-            <img
-              class="w-[40px] md:w-[30px] mx-8 md:mx-0 md:mr-2"
-              src="../assets/icons/socialmedia/messenger.svg"
-              alt=""
-            />
-            <p class="hidden md:block text-gray-500 md:text-2xl">Messenger</p>
+        <div class="flex justify-center">
+          <div class="md:w-[200px] flex md:flex-wrap mt-20 md:ml-40">
+            <div class="flex">
+              <img
+                class="w-[40px] md:w-[30px] mx-8 md:mx-0 md:mr-2"
+                src="../assets/icons/socialmedia/gmail.svg"
+                alt=""
+              />
+              <p class="hidden md:block text-gray-500 md:text-2xl">Gmail</p>
+            </div>
+            <div class="flex md:mt-10">
+              <img
+                class="w-[40px] md:w-[30px] mx-8 md:mx-0 md:mr-2"
+                src="../assets/icons/socialmedia/messenger.svg"
+                alt=""
+              />
+              <p class="hidden md:block text-gray-500 md:text-2xl">Messenger</p>
+            </div>
           </div>
         </div>
       </div>
