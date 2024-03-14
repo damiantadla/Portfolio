@@ -1,10 +1,8 @@
 <script setup>
-import '@/assets/background.js'
+import '../assets/background.js'
 
-import Button from '@/components/ButtonComponent.vue'
-import ArrowComponent from '@/components/ArrowComponent.vue'
-import MessengerComponent from '@/components/MessengerComponent.vue'
-import MainView from '@/views/MainView.vue'
+import Button from '../components/ButtonComponent.vue'
+import ArrowComponent from '../components/ArrowComponent.vue'
 </script>
 <template>
   <div class="relative h-[90vh] max-w-[100vw]">

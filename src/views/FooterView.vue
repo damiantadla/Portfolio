@@ -1,5 +1,5 @@
 <script setup>
-import TitleComponent from '@/components/TitleComponent.vue'
+import TitleComponent from '../components/TitleComponent.vue'
 import { ref } from 'vue'
 
 const show = ref(false)

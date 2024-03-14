@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-
-import ButtonComponent from '@/components/ButtonComponent.vue'
-
-import LoginComponent from '@/components/LoginComponent.vue'
+import { useAuthStore } from '../stores/authStore.js'
+import { useRouter } from 'vue-router'
+import { toast } from 'vue3-toastify'
+import ButtonComponent from '../components/ButtonComponent.vue'
+import LoginComponent from '../components/LoginComponent.vue'
 
 const emit = defineEmits(['changeVisible'])
-
+const store = useAuthStore()
+const router = useRouter()
 const changeVisibleFunction = () => {
   emit('changeVisible')
 }
@@ -36,6 +38,14 @@ const dataMenu = [
     link: '/contact'
   }
 ]
+
+const showLogin = () => {
+  if (!store.isLoggedIn) {
+    visibleLogin.value = !visibleLogin.value
+  } else {
+    router.push('/admin')
+  }
+}
 </script>
 
 <template>
@@ -43,23 +53,19 @@ const dataMenu = [
     <div class="w-screen flex justify-end mt-6 pr-6">
       <font-awesome-icon @click="changeVisibleFunction" :icon="['fas', 'xmark']" class="text-7xl" />
     </div>
-    <div class="flex flex-wrap justify-center text-center mt-16">
+    <div class="flex flex-wrap justify-center text-center">
       <router-link
         v-for="item in dataMenu"
         :key="item.id"
         :to="item.link"
         class="w-80 h-16 border-b-4 border-b-white my-8 text-5xl"
+        @click="changeVisibleFunction"
         >{{ item.title }}</router-link
       >
       <Transition name="fade">
         <LoginComponent v-if="visibleLogin" />
       </Transition>
-      <ButtonComponent
-        @click="visibleLogin = !visibleLogin"
-        text="Login"
-        bg="white"
-        class="mt-10"
-      />
+      <ButtonComponent @click="showLogin" text="Login" bg="white" class="mt-10" />
       <div class="flex 10">
         <img
           class="w-[45px] mx-6 mt-14"
