@@ -22,10 +22,19 @@ import router from './router'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+import Toast from 'vue-toastification'
+// Import the CSS or use your own!
+import 'vue-toastification/dist/index.css'
+
 const app = createApp(App)
+app.use(createPinia())
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(ElementPlus)
-app.use(createPinia())
+
+app.use(Toast, {
+  timeout: 2000
+})
+
 app.use(router)
 
 app.mount('#app')
