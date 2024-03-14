@@ -10,8 +10,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-/* add icons to the library */
-
 library.add(fas) // Solid
 library.add(far) // Regular
 library.add(fab) // Brands
@@ -21,14 +19,22 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
-
+import Toast from 'vue-toastification'
+// Import the CSS or use your own!
+import 'vue-toastification/dist/index.css'
 
 const app = createApp(App)
-app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(createPinia())
+app.component('font-awesome-icon', FontAwesomeIcon)
+app.use(ElementPlus)
+
+app.use(Toast, {
+  timeout: 2000
+})
+
 app.use(router)
 
 app.mount('#app')
-
-
