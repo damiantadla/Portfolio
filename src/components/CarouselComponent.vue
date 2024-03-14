@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 
-import Icon1 from '@/assets/icons/technologies/1.svg'
-import Icon2 from '@/assets/icons/technologies/2.svg'
-import Icon3 from '@/assets/icons/technologies/3.svg'
-import Icon4 from '@/assets/icons/technologies/4.svg'
+import Icon1 from '../assets/icons/technologies/1.svg'
+import Icon2 from '../assets/icons/technologies/2.svg'
+import Icon3 from '../assets/icons/technologies/3.svg'
+import Icon4 from '../assets/icons/technologies/4.svg'
 
 const dataMenu = [
   {
