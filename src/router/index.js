@@ -20,28 +20,28 @@ const routes = [
       {
         path: '', // Usuń początkowy ukośnik
         name: 'DefaultView',
-        component: () => import('../views/dashboardAdmin/DefaultView.vue') // Dodaj komponent DefaultView
+        component: () => import('../views/dashboardAdmin/DefaultView.vue') 
       },
       {
-        path: 'messenger', // Usuń początkowy ukośnik
+        path: 'messenger',
         name: 'Messenger',
-        component: Page404View // Dodaj komponent Page404View
+        component: Page404View
       },
       {
-        path: 'portfolio', // Usuń początkowy ukośnik
+        path: 'portfolio', 
         name: 'Portfolio',
-        component: Page404View // Dodaj komponent Page404View
+        component: Page404View 
       },
       {
-        path: 'projects', // Usuń początkowy ukośnik
+        path: 'projects', 
         name: 'Projects',
-        component: Page404View // Dodaj komponent Page404View
+        component: Page404View 
       }
     ]
   },
   {
-    path: '/:catchAll(.*)', // Obsługa 404
-    component: Page404View // Ustawienie komponentu Page404View dla nieodnalezionych ścieżek
+    path: '/:catchAll(.*)', 
+    component: Page404View 
   }
 ]
 const router = createRouter({
