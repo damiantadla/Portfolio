@@ -17,7 +17,7 @@ export const useAuthStore = defineStore({
       this.isLoggedIn = false
     },
     saveState() {
-      // Zapisz stan w localStorage
+
       localStorage.setItem('pinia-state', JSON.stringify(this.$state))
     },
     restoreState() {
