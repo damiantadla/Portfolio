@@ -11,13 +11,11 @@ import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 
 const authStore = useAuthStore()
-// Przywróć stan Pinii przy uruchamianiu aplikacji
 
 onBeforeMount(() => {
   authStore.restoreState()
 })
 
-// Zapisz stan Pinii przed zniszczeniem aplikacji
 window.onbeforeunload = () => {
   authStore.saveState()
 }
