@@ -14,11 +14,11 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard,
     meta: {
-      requiresAuth: true // Ta ścieżka wymaga autentykacji
+      requiresAuth: true \
     },
     children: [
       {
-        path: '', // Usuń początkowy ukośnik
+        path: '',
         name: 'DefaultView',
         component: () => import('../views/dashboardAdmin/DefaultView.vue') 
       },
